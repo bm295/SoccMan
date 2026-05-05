@@ -1,7 +1,0 @@
-.kpi-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 12px; }
-.card { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:16px; margin-bottom:12px; }
-h3 { margin:0 0 8px; }
-p { font-size:1.4rem; margin:0; font-weight:700; color:#0f766e; }
-table { width:100%; border-collapse:collapse; }
-th,td { border-bottom:1px solid #eef2f7; padding:8px; text-align:left; }
-ul { margin:0; padding-left:18px; }
