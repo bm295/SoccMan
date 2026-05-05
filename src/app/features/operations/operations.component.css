@@ -1,5 +1,0 @@
-.board{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-.col{ background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:12px; }
-.task{ background:#f8fafc; border-radius:8px; padding:8px; margin-bottom:8px; display:flex; flex-direction:column; }
-.alert{ border-left:4px solid #dc2626; }
-small{ color:#64748b; }

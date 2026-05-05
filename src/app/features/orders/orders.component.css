@@ -1,8 +1,0 @@
-.card{ background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:16px; }
-table{ width:100%; border-collapse:collapse; }
-th,td{ border-bottom:1px solid #eef2f7; padding:8px; text-align:left; }
-.actions{ display:flex; gap:8px; }
-button{ border:none; background:#0f766e; color:#fff; padding:6px 10px; border-radius:8px; cursor:pointer; }
-.secondary{ background:#334155; }
-.ok{ color:#0f766e; font-weight:600; }
-.pending{ color:#b45309; font-weight:600; }

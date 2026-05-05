@@ -1,4 +1,0 @@
-.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
-.card{ background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:16px; }
-p{ margin:0; font-size:1.2rem; font-weight:700; color:#0f766e; }
-.warn{ color:#b91c1c; }
