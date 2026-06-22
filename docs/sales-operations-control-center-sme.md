@@ -35,9 +35,9 @@ Trong nhiều SME, dữ liệu vận hành đang bị phân mảnh:
 
 ---
 
-## 3) Vì sao phù hợp với Angular-only
+## 3) Vì sao phù hợp với Angular-first
 
-Angular 19 rất phù hợp với bài toán nội bộ doanh nghiệp nhờ các điểm mạnh:
+Angular rất phù hợp với bài toán nội bộ doanh nghiệp nhờ các điểm mạnh:
 
 - Form lớn, nhiều business rule
 - Dashboard nhiều màn hình
@@ -46,14 +46,41 @@ Angular 19 rất phù hợp với bài toán nội bộ doanh nghiệp nhờ cá
 - Component tái sử dụng cao
 - Phù hợp xây SPA/PWA cho nghiệp vụ nội bộ
 
-### Stack đề xuất (Angular-only)
+### Quyết định tech stack
 
-- **Angular 19 + Signals** cho state/UI reactive
-- **Angular Router** cho module hoá màn hình nghiệp vụ
-- **Angular Material hoặc PrimeNG** cho UI component enterprise
-- **Firebase hoặc Supabase** cho Auth/DB/Storage
-- **IndexedDB** cho offline cache/local-first
-- **Chart.js hoặc ApexCharts** cho dashboard/KPI
+**Chọn stack chính: Angular 22 + Supabase + PrimeNG + TanStack Query + IndexedDB.**
+
+Lý do chọn stack này cho sản phẩm SME:
+
+- **Angular 22 + TypeScript strict mode + Signals**: phù hợp ứng dụng nghiệp vụ nhiều form, workflow, route guard, permission và dashboard; dùng phiên bản Angular đang được hỗ trợ thay vì Angular 19 đã hết support.
+- **Supabase Postgres**: dữ liệu CRM/order/task/cashflow có quan hệ rõ ràng, cần join, filter, báo cáo, phân quyền theo tenant; SQL dễ mở rộng hơn Firestore khi sản phẩm tiến tới commercial SaaS.
+- **Supabase Auth + Row Level Security (RLS)**: đáp ứng nhu cầu multi-tenant SME, phân quyền theo công ty/role và giảm rủi ro leak dữ liệu giữa khách hàng.
+- **Supabase Storage**: lưu file báo giá, chứng từ, biên bản bàn giao, hóa đơn đính kèm.
+- **PrimeNG**: ưu tiên component enterprise như table, filter, dialog, calendar, stepper, badge, menu và data-heavy UI; phù hợp dashboard/quản trị hơn UI marketing.
+- **TanStack Query for Angular**: quản lý server state, cache, refetch, optimistic update cho các màn hình CRUD/workflow; tránh tự viết quá nhiều state service thủ công.
+- **IndexedDB qua Dexie**: cache local cho lookup data, draft form và khả năng offline/PWA ở phase sau.
+- **ApexCharts**: dashboard KPI, revenue chart, overdue chart và workload chart.
+- **Playwright + Vitest/Jest**: E2E cho workflow quan trọng và unit test cho policy/rule engine.
+- **Vercel hoặc Netlify cho frontend preview; Supabase Cloud cho backend MVP**: triển khai nhanh, dễ demo, dễ tách môi trường dev/staging/prod.
+
+### Stack không chọn làm chính
+
+- **Firebase/Firestore**: rất nhanh cho demo realtime nhưng dữ liệu order/cashflow/reporting dạng quan hệ sẽ phức tạp hơn khi cần join, aggregate, audit và báo cáo quản trị.
+- **Angular local-first thuần IndexedDB**: tốt cho prototype/offline demo nhưng không phù hợp làm sản phẩm SME nhiều user, nhiều role, nhiều chi nhánh ngay từ MVP.
+- **Angular Material**: ổn định và nhẹ hơn, nhưng PrimeNG có nhiều component data-heavy sẵn hơn cho ERP/CRM mini.
+
+### Stack đề xuất cuối cùng
+
+- **Frontend:** Angular 22, TypeScript strict mode, Signals, Angular Router, Reactive Forms
+- **UI:** PrimeNG, PrimeFlex hoặc Tailwind CSS utility layer tối thiểu
+- **Backend-as-a-Service:** Supabase Auth, Postgres, RLS, Storage, Realtime selective
+- **Server/database logic:** Postgres schema, views/materialized views cho báo cáo, Edge Functions khi cần business action bảo mật
+- **Client server-state:** TanStack Query for Angular
+- **Client local cache/offline:** Dexie + IndexedDB
+- **Charts:** ApexCharts
+- **Testing:** Vitest/Jest cho unit tests, Playwright cho E2E
+- **Deployment:** Supabase Cloud + Vercel/Netlify preview deployments
+- **Monitoring giai đoạn sau:** Sentry cho frontend error tracking
 
 ---
 
@@ -124,7 +151,18 @@ Màn hình điều hành cho chủ doanh nghiệp:
 
 ## 5) Kiến trúc triển khai đề xuất
 
-## Cách 1: Angular + Firebase (ưu tiên MVP nhanh)
+## Cách 1: Angular + Supabase (khuyến nghị cho sản phẩm thật)
+
+- Auth: Supabase Auth
+- Data: Supabase Postgres
+- Authorization: Row Level Security theo tenant/role
+- File: Supabase Storage
+- Realtime: chỉ bật cho task board/notification cần thiết
+- Reporting: SQL views/materialized views
+
+**Phù hợp:** MVP có định hướng thương mại, dữ liệu quan hệ rõ ràng, cần báo cáo, audit và multi-tenant.
+
+## Cách 2: Angular + Firebase (ưu tiên MVP demo nhanh)
 
 - Auth: Firebase Authentication
 - Data: Firestore
@@ -132,15 +170,6 @@ Màn hình điều hành cho chủ doanh nghiệp:
 - Hosting: Firebase Hosting
 
 **Phù hợp:** demo, MVP nhanh, startup nhỏ, thời gian ra thị trường ngắn.
-
-## Cách 2: Angular + Supabase (ưu tiên dữ liệu dạng SQL)
-
-- Auth
-- Postgres
-- Storage
-- Realtime
-
-**Phù hợp:** mô hình dữ liệu rõ ràng, query/report business thuận tiện.
 
 ## Cách 3: Angular local-first (pure Angular)
 
@@ -199,7 +228,7 @@ Thiết kế form theo schema/config để tái sử dụng:
 
 ---
 
-## 7) Cấu trúc thư mục Angular 19 gợi ý
+## 7) Cấu trúc thư mục Angular 22 gợi ý
 
 ```text
 src/app
@@ -308,3 +337,9 @@ Dự án này vượt xa CRUD thông thường vì có đầy đủ:
 - Khả năng offline/realtime
 
 Điều này giúp sản phẩm trông giống một hệ thống thực tế có thể triển khai cho SME, đồng thời tạo portfolio mạnh theo hướng enterprise Angular.
+
+---
+
+## 11) To-do list triển khai ra thị trường
+
+Danh sách việc cần làm để đưa sản phẩm tới MVP demo, pilot và bán thử đã được tách sang file riêng: [`docs/market-readiness-todo.md`](market-readiness-todo.md).
