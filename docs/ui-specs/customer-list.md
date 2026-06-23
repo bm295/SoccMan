@@ -93,3 +93,10 @@ Customer List là màn hình quản lý danh sách khách hàng, tập trung và
 - Badge trạng thái không chỉ dựa vào màu; cần text hiển thị đầy đủ.
 - Menu action phải mở bằng Enter/Space và đóng bằng Escape.
 - Bulk action bar phải được thông báo qua screen reader khi selection thay đổi.
+
+## Quy tắc dữ liệu và tương tác bổ sung
+
+- Bảng phải lưu lại sort, page size và filter cuối cùng theo user trong cùng organization.
+- Search/filter thay đổi phải reset về trang đầu tiên để tránh trạng thái trang rỗng giả.
+- Export chỉ xuất các trường mà người dùng hiện tại có quyền xem; các trường bị che trong UI không được xuất qua file.
+- Với action archive hàng loạt, hệ thống phải yêu cầu xác nhận lý do và hiển thị số khách hàng có order/receivable đang mở sẽ bị bỏ qua.

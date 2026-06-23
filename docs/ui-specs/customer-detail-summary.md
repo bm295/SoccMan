@@ -73,3 +73,10 @@ Summary giúp người dùng nắm nhanh danh tính khách hàng, người phụ
 - Operations chỉ xem thông tin cần thiết cho order/task liên quan, không thấy trường thương mại nhạy cảm.
 - Accountant xem đầy đủ công nợ và thanh toán, nhưng không sửa thông tin bán hàng ngoài trường được phép.
 - Admin/Manager xem toàn bộ summary và có quyền thực hiện action quản lý theo ma trận quyền.
+
+## Validation và cảnh báo
+
+- Nếu thiếu primary contact, hiển thị cảnh báo nhẹ và CTA `Add contact` cho người có quyền sửa khách hàng.
+- Nếu tax ID trùng khách hàng khác, summary hiển thị warning cho Admin/Manager để rà soát trùng lặp.
+- Khi credit limit bị vượt, badge công nợ chuyển sang cảnh báo và action tạo giao dịch mới tuân theo rule credit hold.
+- Mọi thay đổi owner, payment terms, credit limit hoặc credit hold phải ghi audit log.

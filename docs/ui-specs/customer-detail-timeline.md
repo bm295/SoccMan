@@ -67,3 +67,10 @@ Timeline cung cấp lịch sử hoạt động của khách hàng theo thời gi
 - Timeline chỉ hiển thị event mà user có quyền xem đối tượng liên quan.
 - Event payment/receivable có thể bị ẩn số tiền với Sales/Operations nếu cấu hình hạn chế.
 - Audit-sensitive event chỉ hiển thị cho Admin, Manager hoặc role được cấp quyền audit.
+
+## Quy tắc gom nhóm và giảm nhiễu
+
+- Các cập nhật hệ thống liên tiếp trong vòng thời gian ngắn có thể gom thành một event mở rộng được.
+- Event do automation tạo phải ghi rõ nguồn automation để phân biệt với thao tác người dùng.
+- Filter `Important only` luôn bao gồm overdue, credit hold, quotation approval/rejection, order cancellation và payment voided.
+- Khi một event liên quan đối tượng đã bị xóa hoặc không còn quyền xem, hiển thị tiêu đề an toàn và ẩn link chi tiết.

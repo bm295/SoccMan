@@ -110,3 +110,10 @@ Tabs trong Customer Detail tổ chức dữ liệu chi tiết theo nghiệp vụ
 - Sales: xem notes/quotations/orders của khách được phân công; receivables có thể bị giới hạn trường nhạy cảm.
 - Operations: xem notes liên quan vận hành và orders/tasks liên quan; không xem hoặc không thao tác quotation/payment nhạy cảm.
 - Accountant: xem receivables đầy đủ, notes thanh toán và order/payment liên quan; không chỉnh sửa quotation/order ngoài trường thanh toán được phép.
+
+## Liên kết giữa các tab
+
+- Tạo quotation thành công phải sinh event trên timeline và cập nhật badge số lượng ở tab Quotations.
+- Ghi nhận payment trong tab Receivables phải cập nhật payment status ở tab Orders nếu khoản thanh toán liên quan order.
+- Pin note trong tab Notes không thay đổi thứ tự timeline; timeline vẫn theo timestamp sự kiện.
+- Các action tạo/sửa/xóa trong tab phải refresh vùng tab hiện tại và summary liên quan mà không reload toàn bộ trang.

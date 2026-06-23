@@ -40,29 +40,29 @@ Nguyên tắc viết task:
 
 ### 2.3) Customer screens
 
-- [ ] Tạo file `docs/wireframes/customer-list.md` phác thảo màn hình danh sách khách hàng với search, filter và trạng thái khách hàng.
-- [ ] Tạo file `docs/ui-specs/customer-list.md` mô tả cột bảng, filter, empty state, bulk action và quyền truy cập action.
-- [ ] Tạo file `docs/wireframes/customer-detail.md` phác thảo màn hình Customer Detail với summary, timeline, notes, quotations, orders và receivables.
-- [ ] Tạo file `docs/ui-specs/customer-detail-summary.md` mô tả thông tin summary, trạng thái công nợ và action chính.
-- [ ] Tạo file `docs/ui-specs/customer-detail-timeline.md` mô tả event trong timeline, thứ tự hiển thị và filter.
-- [ ] Tạo file `docs/ui-specs/customer-detail-tabs.md` mô tả tab notes, quotations, orders và receivables.
+- [x] Tạo file `docs/wireframes/customer-list.md` phác thảo màn hình danh sách khách hàng với search, filter và trạng thái khách hàng.
+- [x] Tạo file `docs/ui-specs/customer-list.md` mô tả cột bảng, filter, empty state, bulk action và quyền truy cập action.
+- [x] Tạo file `docs/wireframes/customer-detail.md` phác thảo màn hình Customer Detail với summary, timeline, notes, quotations, orders và receivables.
+- [x] Tạo file `docs/ui-specs/customer-detail-summary.md` mô tả thông tin summary, trạng thái công nợ và action chính.
+- [x] Tạo file `docs/ui-specs/customer-detail-timeline.md` mô tả event trong timeline, thứ tự hiển thị và filter.
+- [x] Tạo file `docs/ui-specs/customer-detail-tabs.md` mô tả tab notes, quotations, orders và receivables.
 
 ### 2.4) Quotation và Order screens
 
-- [ ] Tạo file `docs/wireframes/quotation-form.md` phác thảo form quotation gồm customer, line items, discount, tax và total.
-- [ ] Tạo file `docs/ui-specs/quotation-form.md` mô tả validation, tính total, rule discount và action chuyển quotation thành order.
-- [ ] Tạo file `docs/wireframes/order-detail.md` phác thảo Order Detail với progress bar, linked tasks, payment status và activity log.
-- [ ] Tạo file `docs/ui-specs/order-progress.md` mô tả trạng thái Draft → Confirmed → In Progress → Delivered → Paid và điều kiện chuyển trạng thái.
-- [ ] Tạo file `docs/ui-specs/order-linked-tasks.md` mô tả bảng linked tasks, trạng thái task và action tạo/cập nhật task.
-- [ ] Tạo file `docs/ui-specs/order-payment-status.md` mô tả payment status, receivable amount, paid amount và overdue badge.
-- [ ] Tạo file `docs/ui-specs/order-activity-log.md` mô tả activity log, actor, timestamp và dữ liệu audit cần hiển thị.
+- [x] Tạo file `docs/wireframes/quotation-form.md` phác thảo form quotation gồm customer, line items, discount, tax và total.
+- [x] Tạo file `docs/ui-specs/quotation-form.md` mô tả validation, tính total, rule discount và action chuyển quotation thành order.
+- [x] Tạo file `docs/wireframes/order-detail.md` phác thảo Order Detail với progress bar, linked tasks, payment status và activity log.
+- [x] Tạo file `docs/ui-specs/order-progress.md` mô tả trạng thái Draft → Confirmed → In Progress → Delivered → Paid và điều kiện chuyển trạng thái.
+- [x] Tạo file `docs/ui-specs/order-linked-tasks.md` mô tả bảng linked tasks, trạng thái task và action tạo/cập nhật task.
+- [x] Tạo file `docs/ui-specs/order-payment-status.md` mô tả payment status, receivable amount, paid amount và overdue badge.
+- [x] Tạo file `docs/ui-specs/order-activity-log.md` mô tả activity log, actor, timestamp và dữ liệu audit cần hiển thị.
 
 ### 2.5) Operations Task Board
 
-- [ ] Tạo file `docs/wireframes/operations-task-board.md` phác thảo board theo cột trạng thái.
-- [ ] Tạo file `docs/ui-specs/operations-task-columns.md` mô tả các cột trạng thái task và rule kéo-thả/chuyển trạng thái.
-- [ ] Tạo file `docs/ui-specs/operations-task-filters.md` mô tả filter theo assignee, deadline, customer, order và trạng thái quá hạn.
-- [ ] Tạo file `docs/ui-specs/operations-task-card.md` mô tả nội dung task card, badge ưu tiên, deadline và quick actions.
+- [x] Tạo file `docs/wireframes/operations-task-board.md` phác thảo board theo cột trạng thái.
+- [x] Tạo file `docs/ui-specs/operations-task-columns.md` mô tả các cột trạng thái task và rule kéo-thả/chuyển trạng thái.
+- [x] Tạo file `docs/ui-specs/operations-task-filters.md` mô tả filter theo assignee, deadline, customer, order và trạng thái quá hạn.
+- [x] Tạo file `docs/ui-specs/operations-task-card.md` mô tả nội dung task card, badge ưu tiên, deadline và quick actions.
 
 ## 3) Thiết lập kỹ thuật
 
