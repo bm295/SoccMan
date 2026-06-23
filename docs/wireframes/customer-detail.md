@@ -70,3 +70,10 @@ Customer Detail cung cấp một hồ sơ khách hàng thống nhất để xem 
 - **Not found**: thông báo khách hàng không tồn tại hoặc đã bị xóa/lưu trữ ngoài quyền xem.
 - **Permission limited**: chỉ hiển thị các khối dữ liệu người dùng được phép xem; action không đủ quyền bị ẩn hoặc disabled có lý do.
 - **Error partial**: nếu timeline hoặc tab lỗi riêng, giữ summary và hiển thị nút retry ở vùng lỗi.
+
+## Ghi chú tương tác bổ sung
+
+- Header phải sticky khi cuộn qua timeline để người dùng luôn thấy tên khách hàng, trạng thái và action chính.
+- Click vào badge công nợ trong summary điều hướng xuống tab Receivables và áp dụng filter `Overdue` nếu có nợ quá hạn.
+- Timeline đóng vai trò luồng hoạt động tổng hợp; các tab bên dưới là nơi thao tác và xem dữ liệu chi tiết theo nghiệp vụ.
+- Khi mở trực tiếp URL của một tab, màn hình vẫn render summary trước rồi scroll/focus vào tab tương ứng.
