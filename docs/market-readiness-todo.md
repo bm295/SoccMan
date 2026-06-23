@@ -23,20 +23,20 @@ Nguyên tắc viết task:
 
 ### 2.1) Danh mục màn hình và design system
 
-- [ ] Tạo thư mục `docs/wireframes/` để chứa wireframe theo từng màn hình.
-- [ ] Tạo thư mục `docs/ui-specs/` để chứa đặc tả UI chi tiết theo từng màn hình.
-- [ ] Tạo file `docs/wireframes/README.md` liệt kê các wireframe cần có cho Dashboard, Customer List, Customer Detail, Quotation, Order Detail và Task Board.
-- [ ] Tạo file `docs/design-system.md` định nghĩa màu trạng thái, typography, spacing, button style, badge style và empty states.
-- [ ] Tạo file `docs/ui-specs/navigation.md` mô tả sidebar, topbar, breadcrumb và hành vi responsive.
+- [x] Tạo thư mục `docs/wireframes/` để chứa wireframe theo từng màn hình.
+- [x] Tạo thư mục `docs/ui-specs/` để chứa đặc tả UI chi tiết theo từng màn hình.
+- [x] Tạo file `docs/wireframes/README.md` liệt kê các wireframe cần có cho Dashboard, Customer List, Customer Detail, Quotation, Order Detail và Task Board.
+- [x] Tạo file `docs/design-system.md` định nghĩa màu trạng thái, typography, spacing, button style, badge style và empty states.
+- [x] Tạo file `docs/ui-specs/navigation.md` mô tả sidebar, topbar, breadcrumb và hành vi responsive.
 
 ### 2.2) Dashboard
 
-- [ ] Tạo file `docs/wireframes/dashboard.md` phác thảo layout Dashboard gồm vùng KPI cards, biểu đồ doanh thu, đơn trễ hạn và task quá hạn.
-- [ ] Tạo file `docs/ui-specs/dashboard-kpi-cards.md` mô tả từng KPI card: label, công thức tính, trạng thái loading, empty state và error state.
-- [ ] Tạo file `docs/ui-specs/dashboard-revenue-chart.md` mô tả biểu đồ doanh thu: trục thời gian, metric, filter và tooltip.
-- [ ] Tạo file `docs/ui-specs/dashboard-overdue-orders.md` mô tả bảng đơn trễ hạn: cột dữ liệu, sort, filter và action cần có.
-- [ ] Tạo file `docs/ui-specs/dashboard-overdue-tasks.md` mô tả bảng task quá hạn: cột dữ liệu, filter theo assignee/deadline và action cập nhật trạng thái.
-- [ ] Tạo file `docs/ui-specs/dashboard-responsive.md` mô tả cách Dashboard hiển thị trên desktop, tablet và mobile.
+- [x] Tạo file `docs/wireframes/dashboard.md` phác thảo layout Dashboard gồm vùng KPI cards, biểu đồ doanh thu, đơn trễ hạn và task quá hạn.
+- [x] Tạo file `docs/ui-specs/dashboard-kpi-cards.md` mô tả từng KPI card: label, công thức tính, trạng thái loading, empty state và error state.
+- [x] Tạo file `docs/ui-specs/dashboard-revenue-chart.md` mô tả biểu đồ doanh thu: trục thời gian, metric, filter và tooltip.
+- [x] Tạo file `docs/ui-specs/dashboard-overdue-orders.md` mô tả bảng đơn trễ hạn: cột dữ liệu, sort, filter và action cần có.
+- [x] Tạo file `docs/ui-specs/dashboard-overdue-tasks.md` mô tả bảng task quá hạn: cột dữ liệu, filter theo assignee/deadline và action cập nhật trạng thái.
+- [x] Tạo file `docs/ui-specs/dashboard-responsive.md` mô tả cách Dashboard hiển thị trên desktop, tablet và mobile.
 
 ### 2.3) Customer screens
 
