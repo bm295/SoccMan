@@ -66,12 +66,12 @@ Nguyên tắc viết task:
 
 ## 3) Thiết lập kỹ thuật
 
-- [ ] Tạo project Angular 22 với TypeScript strict mode, Angular Router và cấu trúc thư mục theo mục 7 trong `docs/sales-operations-control-center-sme.md`.
-- [ ] Tạo file `.env.example` chứa biến môi trường mẫu cho Supabase URL, Supabase anon key và Sentry DSN.
-- [ ] Tạo file `src/environments/environment.ts` đọc cấu hình Supabase/Sentry cho local dev.
-- [ ] Tạo file `src/environments/environment.prod.ts` đọc cấu hình Supabase/Sentry cho production build.
-- [ ] Tạo file `src/app/app.routes.ts` khai báo route lazy-load cho dashboard, customers, quotations, orders và tasks.
-- [ ] Tạo file `src/app/app.config.ts` đăng ký Angular Router, HTTP client, PrimeNG config và TanStack Query provider.
+- [x] Tạo project Angular 22 với TypeScript strict mode, Angular Router và cấu trúc thư mục theo mục 7 trong `docs/sales-operations-control-center-sme.md`.
+- [x] Tạo file `.env.example` chứa biến môi trường mẫu cho Supabase URL, Supabase anon key và Sentry DSN.
+- [x] Tạo file `src/environments/environment.ts` đọc cấu hình Supabase/Sentry cho local dev.
+- [x] Tạo file `src/environments/environment.prod.ts` đọc cấu hình Supabase/Sentry cho production build.
+- [x] Tạo file `src/app/app.routes.ts` khai báo route lazy-load cho dashboard, customers, quotations, orders và tasks.
+- [x] Tạo file `src/app/app.config.ts` đăng ký Angular Router, HTTP client, PrimeNG config và TanStack Query provider.
 - [ ] Tạo project Supabase cho môi trường `dev` và ghi thông tin setup vào `docs/setup-supabase.md`.
 - [ ] Tạo migration `supabase/migrations/001_initial_schema.sql` cho bảng `organizations` và `users`.
 - [ ] Tạo migration `supabase/migrations/002_customer_schema.sql` cho bảng `customers` và index/filter cần thiết.
