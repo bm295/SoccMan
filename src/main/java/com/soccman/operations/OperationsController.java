@@ -27,7 +27,7 @@ public class OperationsController {
                 new OperationTask("SO-001", "Issue invoice", false, 0)
         );
 
-        return tasks.stream().map(task -> Map.of(
+        return tasks.stream().map(task -> Map.<String, Object>of(
                 "orderCode", task.orderCode(),
                 "taskName", task.taskName(),
                 "done", task.done(),
