@@ -1,6 +1,10 @@
 package com.soccman.operations;
 
-import com.soccman.common.PolicyService;
+import com.soccman.operations.application.ListOperationTasksService;
+import com.soccman.operations.domain.TaskCriticalPolicy;
+import com.soccman.operations.infrastructure.persistence.InMemoryOperationTaskRepository;
+import com.soccman.operations.infrastructure.web.OperationTaskSummaryFactory;
+import com.soccman.operations.infrastructure.web.OperationsController;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -14,7 +18,11 @@ class OperationsControllerTest {
 
     @Test
     void tasksReturnsTaskSummariesWithCriticalFlagsFromPolicy() {
-        var controller = new OperationsController(new OperationTaskSummaryFactory(new PolicyService()));
+        var repository = new InMemoryOperationTaskRepository();
+        var controller = new OperationsController(
+                new OperationTaskSummaryFactory(new TaskCriticalPolicy()),
+                new ListOperationTasksService(repository)
+        );
 
         List<Map<String, Object>> tasks = controller.tasks();
 

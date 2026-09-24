@@ -14,7 +14,4 @@ public class PolicyService {
         return !customerOverdue;
     }
 
-    public boolean isTaskCritical(long overdueDays) {
-        return overdueDays > 2;
-    }
 }

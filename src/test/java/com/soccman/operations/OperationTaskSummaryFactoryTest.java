@@ -1,6 +1,8 @@
 package com.soccman.operations;
 
-import com.soccman.common.PolicyService;
+import com.soccman.operations.domain.OperationTask;
+import com.soccman.operations.domain.TaskCriticalPolicy;
+import com.soccman.operations.infrastructure.web.OperationTaskSummaryFactory;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
@@ -13,7 +15,7 @@ class OperationTaskSummaryFactoryTest {
 
     @Test
     void createBuildsSummaryUsingPolicyCriticalThreshold() {
-        var factory = new OperationTaskSummaryFactory(new PolicyService());
+        var factory = new OperationTaskSummaryFactory(new TaskCriticalPolicy());
 
         Map<String, Object> summary = factory.create(
                 new OperationTask("SO-999", "Escalate shipment", false, 3)
@@ -27,7 +29,7 @@ class OperationTaskSummaryFactoryTest {
 
     @Test
     void createKeepsTasksAtTwoOverdueDaysNonCritical() {
-        var factory = new OperationTaskSummaryFactory(new PolicyService());
+        var factory = new OperationTaskSummaryFactory(new TaskCriticalPolicy());
 
         Map<String, Object> summary = factory.create(
                 new OperationTask("SO-998", "Confirm address", false, 2)
